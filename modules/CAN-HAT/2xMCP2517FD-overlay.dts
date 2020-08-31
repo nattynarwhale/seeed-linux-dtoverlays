@@ -28,7 +28,7 @@
         target = <&gpio>;
         __overlay__ {
             can_int_pins: can_int_pins {
-                brcm,pins = <25 24>;
+                brcm,pins = <25 16>;
                 brcm,function = <0>; /* input */
             };
 	    spi1_pins: spi1_pins {
@@ -37,7 +37,7 @@
 	    };
 
 	   spi1_cs_pins: spi1_cs_pins {
-			brcm,pins = <18>;
+			brcm,pins = <26>;
 			brcm,function = <1>; /* output */
 	    };
 
@@ -88,7 +88,7 @@
             #size-cells = <0>;
 
 
-	    cs-gpios = <&gpio 18 1>;
+	    cs-gpios = <&gpio 26 1>;
  	    status = "okay";
             can1: can@1 {
                 reg = <0>;
@@ -97,7 +97,7 @@
                 compatible = "microchip,mcp2517fd";
                 spi-max-frequency = <20000000>;
                 interrupt-parent = <&gpio>;
-                interrupts = <24 8>; /* IRQ_TYPE_LEVEL_LOW */
+                interrupts = <16 8>; /* IRQ_TYPE_LEVEL_LOW */
                 clocks = <&mcp2517fd_osc>;
             };
 	};

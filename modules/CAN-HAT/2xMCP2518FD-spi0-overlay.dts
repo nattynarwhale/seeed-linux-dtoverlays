@@ -28,7 +28,7 @@
         target = <&gpio>;
         __overlay__ {
             can_int_pins: can_int_pins {
-                brcm,pins = <25 24>;
+                brcm,pins = <25 16>;
                 brcm,function = <0>; /* input */
             };
         };
@@ -63,7 +63,7 @@
                 compatible = "microchip,mcp25xxfd";
                 spi-max-frequency = <20000000>;
                 interrupt-parent = <&gpio>;
-                interrupts = <24 8>; /* IRQ_TYPE_LEVEL_LOW */
+                interrupts = <16 8>; /* IRQ_TYPE_LEVEL_LOW */
                 clocks = <&mcp2518fd_osc>;
             };
 
